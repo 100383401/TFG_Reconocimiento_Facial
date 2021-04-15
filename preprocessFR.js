@@ -1,6 +1,6 @@
 const fs = require('fs');
 const path = require('path');
-const fr = require('face-recognition')
+const fr = require('face-recognition');
 
 
 function filewalker(dir, done) {
@@ -105,6 +105,20 @@ filewalker("./DATASET_CARAS", function(err, data){
     for(let i = 0; i < cantidades.length; i++) {
         cantidades[i][1] = Math.round(cantidades[i][1] * 0.2)
     }
+
+    fs.mkdir(path.join(__dirname, 'CARAS_TEST'), {recursive: true}, (err) => {
+        if (err) {
+            return console.error(err);
+        }
+        console.log('Se ha creado la carpeta CARAS_TEST');
+    })
+
+    fs.mkdir(path.join(__dirname, 'CARAS_ENTRENAMIENTO'), {recursive: true}, (err) => {
+        if (err) {
+            return console.error(err);
+        }
+        console.log('Se ha creado la carpeta CARAS_ENTRENAMIENTO');
+    })
 
     let dir = "./DATASET_CARAS"
 
