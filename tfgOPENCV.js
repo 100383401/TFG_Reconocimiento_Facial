@@ -59,7 +59,7 @@ get_names("./DATASET_CARAS", function(err, nombres){
     //console.log(nombres)
 
 
-    const trainImgsPath = path.resolve(`./CARAS_ENTRENAMIENTO`);
+    const trainImgsPath = path.resolve(`./CARAS_ENTRENAMIENTO_OPENCV`);
 
     const trainFiles = fs.readdirSync(trainImgsPath);
 
@@ -80,7 +80,7 @@ get_names("./DATASET_CARAS", function(err, nombres){
     .map(file => nombres.findIndex(name => file.includes(name)));
 
 
-    const testImgsPath = path.resolve(`./CARAS_TEST`);
+    const testImgsPath = path.resolve(`./CARAS_TEST_OPENCV`);
 
     const testFiles = fs.readdirSync(testImgsPath);
 
